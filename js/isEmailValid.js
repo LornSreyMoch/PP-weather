@@ -118,23 +118,36 @@
 // checkPasswords(passwords);
 
 
-function isLoggedIn() {
-    // Retrieve the value of the session variable 'isLoggedIn'
-    let isLoggedInValue = sessionStorage.getItem('isLoggedIn');
+// function isLoggedIn() {
+//     // Retrieve the value of the session variable 'isLoggedIn'
+//     let isLoggedInValue = sessionStorage.getItem('isLoggedIn');
 
-    // Check if the value is 'true' and return the corresponding boolean value
-    if (isLoggedInValue === 'true') {
-        return true;
-    } else {
-        return false;
+//     // Check if the value is 'true' and return the corresponding boolean value
+//     if (isLoggedInValue === 'true') {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// // Example usage:
+// if (isLoggedIn()) {
+//     console.log("User is logged in.");
+// } else {
+//     console.log("User is not logged in.");
+// }
+
+
+
+function deleteEmailLoginFromLocalStorage() {
+    try {
+        // Attempt to remove the 'isLoggedIn' key from local storage
+        localStorage.removeItem('isLoggedIn');
+        
+        // Log a message indicating successful deletion
+        console.log("Email login information deleted from local storage.");
+    } catch (error) {
+        // If an error occurs during deletion, catch it and log an error message
+        console.error("Error deleting email login information from local storage:", error);
     }
 }
-
-// Example usage:
-if (isLoggedIn()) {
-    console.log("User is logged in.");
-} else {
-    console.log("User is not logged in.");
-}
-
-
