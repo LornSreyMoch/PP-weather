@@ -1,3 +1,4 @@
+
 let previousEmail = null; // Variable to store the previously used email
 
 function checkPassword() {
@@ -22,3 +23,5 @@ function checkPassword() {
 
 // Add event listener to the login button
 document.getElementById("loginButton").addEventListener("click", checkPassword);
+
+
