@@ -13,20 +13,20 @@
    
  
 //  }
- checkPassword(passwords);
-function checkPassword(password) {
-    for (let i = 0; i < password.length; i++) {
-        if ((password[i].includes("@") || password[i].includes("!") || password[i].includes("?")) && password[i].length >= 8) {
-            console.log(password[i] + " ",true);
-        } else {
-            console.log(password[i] + " ",false);
-        }
-    }
-}
+//  checkPassword(passwords);
+// function checkPassword(password) {
+//     for (let i = 0; i < password.length; i++) {
+//         if ((password[i].includes("@") || password[i].includes("!") || password[i].includes("?")) && password[i].length >= 8) {
+//             console.log(password[i] + " ",true);
+//         } else {
+//             console.log(password[i] + " ",false);
+//         }
+//     }
+// }
 
-// Example usage:
-let passwords = ["soychanleakhena@gmail.com", "leakhena"];
-checkPassword(passwords);
+// // Example usage:
+// let passwords = ["soychanleakhena@gmail.com", "leakhena"];
+// checkPassword(passwords);
 
 
 
@@ -116,4 +116,25 @@ checkPassword(passwords);
 // }
 
 // checkPasswords(passwords);
+
+
+function isLoggedIn() {
+    // Retrieve the value of the session variable 'isLoggedIn'
+    let isLoggedInValue = sessionStorage.getItem('isLoggedIn');
+
+    // Check if the value is 'true' and return the corresponding boolean value
+    if (isLoggedInValue === 'true') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Example usage:
+if (isLoggedIn()) {
+    console.log("User is logged in.");
+} else {
+    console.log("User is not logged in.");
+}
+
 
