@@ -29,14 +29,18 @@ try {
             <div class="col3">
                 <p>${data.location.localtime}</p>
                 <div class="h2">
-                    <img src="imge.png" alt="">
+                    <img src="${data.current.condition.icon}" alt="" style="height: 120px; 
+                    width: 120px; 
+                    margin-top: 5px; 
+                    margin-left: -35%;">
                 </div>
                 <div class="c">
                     <div class="h3">${data.current.feelslike_c}</div>
                     <p>&deg;C</p>
                 </div>
                 <div class="h4">
-                    "Partly cloudy"</div>
+                "${data.current.condition.text}
+                "</div>
             </div>
             <div style="padding: 30px; height: 400px; margin-left: -1%; font-size: 22px; font-weight: 400; text-align: left; line-height: 2;"
                 class="col4">
@@ -45,7 +49,7 @@ try {
                         <br> </div>
                     <div class="b2">
                     ${data.current.feelslike_c} C <br>
-                    ${data.current.humidity}<br>
+                    ${data.current.humidity}%<br>
                     ${data.current.gust_kph}<br>
                     ${data.current.uv}
                     </div>
