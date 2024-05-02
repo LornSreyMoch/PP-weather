@@ -1,4 +1,4 @@
-let previousEmail = null; // Variable to store the previously used email
+let previousEmail = null; 
 
 function checkEmail() {
   let email = document.getElementById("email").value;
