@@ -10,11 +10,21 @@
     <title>Home page</title>
 </head>
 <body>
+
+    <a href="../login/index.html"><button type="button"
+    class="btn btn-danger" style="font-size: 20px;">Log out</button></a>
+<div class="box">
+    <div class="box1">Phnom Penh Weather Website</div>
+    <div class="box2">Login as:
+        <script>document.write(localStorage.getItem("email"));</script>
+    </div>
+</div>
+
     <div id="box"></div>
     <div id="weather"></div>
     
     <script src="index.js"></script>
-       
+        
         <script type="module" src="../../js/getCurrentWeather.js"></script>
         <script type="module" src="../../js/getForecastWeather.js"></script>
         

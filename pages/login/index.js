@@ -1,18 +1,23 @@
+document.getElementById("login").addEventListener("submit", function(event) {
+    event.preventDefault(); 
 
-const loginBtn = document.getElementById("login");
-
-loginBtn.onclick = function(){
     let email = document.getElementById("email").value; 
     console.log("Email: ", email);
 
-    localStorage.setItem("email", email);
+    if (isValidEmail(email)) {
+        localStorage.setItem("email", email);
+        alert("Logged in successfully!");
+        // Redirect to another page after successful login
+        window.location.href = "../home/index.html";
+    } else {
+        alert("Login failed! Please enter a valid email address.");
+    }
+});
 
-    let storedEmail = localStorage.getItem("email");
-    console.log("Stored Email: ", storedEmail);
-
-    alert("Logged in successfully!");
+function isValidEmail(email) {
+    return (email.includes("@") || email.includes("!") || email.includes("?")) && email.length >= 8;
 }
-function getEmailFromLocalStorage() {
-    return localStorage.getItem("email");
-  }
-  
+
+window.onload = function() {
+   localStorage.getItem("email");
+};
