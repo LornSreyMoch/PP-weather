@@ -6,7 +6,7 @@ document.getElementById("login").addEventListener("submit", function(event) {
 
     if (isValidEmail(email)) {
         localStorage.setItem("email", email);
-        window.location.href = "../home/index.html";
+        window.location.href = "./pages/home/index.html";
     } else {
         alert("Login failed! Please enter a valid email address.");
         
