@@ -6,12 +6,12 @@ document.getElementById("login").addEventListener("submit", function(event) {
 
     if (isValidEmail(email)) {
         localStorage.setItem("email", email);
-        alert("Logged in successfully!");
-        // Redirect to another page after successful login
         window.location.href = "../home/index.html";
     } else {
         alert("Login failed! Please enter a valid email address.");
+        
     }
+    
 });
 
 function isValidEmail(email) {

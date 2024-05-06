@@ -59,11 +59,7 @@ export default async function fet() {
                 </div>
             </div>
         </div>
-        <div class="reaction">
-            <button style="width: 220px; height: 55px; font-size: 22px; border-radius: 10px;margin: auto; " type="button"
-                class="btn btn-primary">Share Reaction</button>
-        </div>
-        <div class="paragraph">3 Days Forecast Weathers</div>
+      
         `;
     console.log(data);
   } catch (error) {

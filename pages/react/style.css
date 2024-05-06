@@ -1,27 +1,11 @@
 .star {
-    font-size: 35px;
+    font-size: 40px;
     cursor: pointer;
+    padding: 5px;
+  
   }
-   
-  .one {
-    color: rgb(251, 255, 12);
-  }
-   
-  .two {
-    color: rgb(251, 255, 12);
-  }
-   
-  .three {
-    color: rgb(251, 255, 120);
-  }
-   
-  .four {
-    color: rgb(255, 255, 0);
-  }
-   
-  .five {
-    color: rgb(251, 255, 12);
-  }
+
+ 
 
 
     
