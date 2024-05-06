@@ -9,12 +9,12 @@ async function weathers() {
   };
 
   try {
-      const response = await fetch(url, options);
-      const result = await response.json();
+	const response = await fetch(url, options);
+	const result = await response.json();
 
       const forecast = document.getElementById("weather");
 
-      for (let i = 0; i < 2; i++) { 
+      for (let i = 1; i < 3; i++) { 
           forecast.innerHTML += `
           <div class="container text-center">
               <div class="row row-cols-2"

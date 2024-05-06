@@ -1,26 +1,19 @@
+export default async function fet() {
+  const url =
+    "https://weatherapi-com.p.rapidapi.com/current.json?q=phnom%20penh";
+  const options = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": "a1bc00386fmshc7128e66cc6abb4p16bea9jsn72d4d40e48bc",
+      "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
+    },
+  };
 
-export default async function fet(){
-    const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=phnom%20penh';
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': 'a1bc00386fmshc7128e66cc6abb4p16bea9jsn72d4d40e48bc',
-            'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
-        }
-    };
-    
-    try {
-        const response = await fetch(url, options);
-        const data = await response.json();
-        let card = document.getElementById('box');
-        card.innerHTML += `
-        <button type="button"
-            class="btn btn-danger">Log out</button>
-        <div class="box">
-            <div class="box1">Phnom Penh Weather Website</div>
-            <div class="box2">Login as</div>
-        </div>
-    
+  try {
+    const response = await fetch(url, options);
+    const data = await response.json();
+    let card = document.getElementById("box");
+    card.innerHTML += `
         <div class="container text-center">
             <div class="row row-cols-2"
                 style="width: 800px; margin: auto; margin-top: 30px; background-color: rgb(221, 220, 220); border-radius: 20px;">
@@ -36,7 +29,7 @@ export default async function fet(){
                         margin-left: -35%;">
                     </div>
                     <div class="c">
-                        <div class="h3">${data.current.feelslike_c}</div>
+                        <div class="h3">${data.current.temp_c}</div>
                         <p>&deg;C</p>
                     </div>
                     <div class="h4">
@@ -66,15 +59,11 @@ export default async function fet(){
                 </div>
             </div>
         </div>
-        <div class="reaction">
-            <button style="width: 220px; height: 55px; font-size: 22px; border-radius: 10px;margin: auto; " type="button"
-                class="btn btn-primary">Share Reaction</button>
-        </div>
-        <div class="paragraph">3 Days Forecast Weathers</div>
+      
         `;
-        console.log(data);
-    } catch (error) {
-        console.error(error);
-    }
-    }
-    fet();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
+}
+fet();

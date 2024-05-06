@@ -1,30 +1,54 @@
-// script.js
+async function results() {
+  const url = "https://weather-backend-kappa.vercel.app/reactions";
+  const options = {
+    method: "GET",
+    headers: {
+      "api-key":
+        "321dd35cfdb912208ad17ff541fa5335170e957ef19362431897d25599b703d0",
+    },
+  };
 
-// To access the stars
-let stars = 
-	document.getElementsByClassName("star");
-let output = 
-	document.getElementById("output");
+  try {
+    const response = await fetch(url, options);
+    const result = await response.json();
 
-// Funtion to update rating
-function gfg(n) {
-	remove();
-	for (let i = 0; i < n; i++) {
-		if (n == 1) cls = "one";
-		else if (n == 2) cls = "two";
-		else if (n == 3) cls = "three";
-		else if (n == 4) cls = "four";
-		else if (n == 5) cls = "five";
-		stars[i].className = "star " + cls;
-	}
-	output.innerText = "Rating is: " + n + "/5";
+    async function handleSubmit(event) {
+      event.preventDefault();
+
+      const formData = new FormData(event.target);
+      const submittedData = {
+        rating: formData.get("rating"),
+        comment: formData.get("comment"),
+      };
+
+      const htmlContent = `
+        <p style="font-size: 25px;">${submittedData.rating}</p>
+        <p style="font-size: 25px;">${submittedData.comment}</p>
+      
+    `;
+
+      const mresult = document.getElementById("result");
+      mresult.innerHTML = htmlContent;
+    }
+
+    const form = document.querySelector(".form");
+    form.addEventListener("submit", handleSubmit);
+
+    console.log(result);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-// To remove the pre-applied styling
-function remove() {
-	let i = 0;
-	while (i < 5) {
-		stars[i].className = "star";
-		i++;
-	}
-}
+results();
+
+
+
+ 
+
+
+
+
+
+
+

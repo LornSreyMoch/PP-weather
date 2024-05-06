@@ -1,10 +1,10 @@
-let previousEmail = "";
+let previousEmail = null; 
 
 function checkEmail() {
   let email = document.getElementById("email").value;
 
   if (
-    (email.includes("@") || email.includes("!") || email.includes("?")) &&
+    (email.includes("@") && email.includes("!") && email.includes("?")) &&
     email.length >= 8
   ) {
     if (email === previousEmail) {
@@ -20,5 +20,3 @@ function checkEmail() {
 }
 
 document.getElementById("loginButton").addEventListener("click", checkEmail);
-
-export default checkEmail;
