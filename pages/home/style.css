@@ -38,12 +38,6 @@ p{
     font-weight: 400; 
     margin-right: 50%;
 }
-.h2 img{
-    height: 100px; 
-    width: 100px; 
-    margin-top: 1%; 
-    margin-left: -35%;
-}
 .c{
     display: flex;
 }
